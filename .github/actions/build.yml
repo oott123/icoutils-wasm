@@ -1,0 +1,14 @@
+name: "Build WASM"
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mymindstorm/setup-emsdk@v11
+      - name: Build
+        run: ./build.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: wasm
+          path: out
