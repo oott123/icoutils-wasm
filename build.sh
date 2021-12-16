@@ -13,7 +13,7 @@ cp ../files/main.c wrestool/main.c
 export EMCC_CFLAGS="-s USE_LIBPNG=1 -lworkerfs.js -lnodefs.js -s EXPORTED_RUNTIME_METHODS='ccall,cwrap,UTF8ToString,StringToUTF8,stackTrace,FS,MEMFS,WORKERFS,NODEFS,writeArrayToMemory,writeStringToMemory,writeAsciiToMemory'"
 
 emconfigure ./configure
-emmake make
+emmake make -j4
 
 mkdir -p ../out
 cp wrestool/wrestool ../out/wrestool.js
